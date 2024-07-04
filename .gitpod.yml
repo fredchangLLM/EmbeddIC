@@ -1,0 +1,11 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      git clone https://github.com/flutter/flutter.git -b stable --depth 1
+      echo 'export PATH="$PATH:/workspace/flutter/bin"' >> ~/.bashrc
+      source ~/.bashrc
+      flutter precache
+      flutter doctor
+    command: flutter run
